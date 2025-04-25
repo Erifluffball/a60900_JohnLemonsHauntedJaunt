@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class GameEnding : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float fadeDuration = 1f;
+    public GameObject player;
+
+    bool m_IsPlayerAtExit;
+
+    void OnTriggerEnter (Collider other)
     {
-        
+        if (other.gameObject == player)
+        {
+            m_IsPlayerAtExit = true;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void Update ()
     {
-        
+        if(m_IsPlayerAtExit)
+        {
+
+        }
     }
 }
